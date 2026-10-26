@@ -1,0 +1,42 @@
+
+
+<input type="text" name="data" id="datas">
+<button onclick="Check()">Check</button>
+
+<span id="show"></span>
+
+
+<script>
+
+    // var data = [20,12,55,734,2,54];
+    // console.log(data);
+    // var dataSort = data.sort();
+    // console.log(dataSort);
+    
+    
+    // var a = "10";
+    // console.log(typeof a);
+    // var b = "20";
+    
+    // var c = a+b;
+    // document.write(c);
+    
+    // document.write(typeof +c);
+    
+    
+function Check()
+{
+    var datas = document.getElementById('datas').value;
+
+    if(datas%2===0)
+{
+    document.getElementById('show').innerHTML = "Even";
+}else 
+{
+    document.getElementById('show').innerHTML = "Odd";
+}
+}
+
+    </script>
+    
+

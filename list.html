@@ -1,0 +1,32 @@
+<style>
+    #error{
+        color:red;
+    }
+</style>
+
+<ul id="box"></ul>
+<input type="text" id="data">
+<button onclick="List()">Add List</button>
+<span id="error"></span>
+
+
+<script>
+function List(){
+let data = document.getElementById('data').value;
+
+document.getElementById('error').innerHTML = "";
+if(data=="")
+    {
+        document.getElementById('error').innerHTML = "Please fill the field";
+    }else 
+    {
+        let box = document.getElementById('box');
+        let li = document.createElement('li');
+        console.log(li);
+        li.innerText = data;
+        data.innerText =  box.prepend(li);
+        // box.innerText = data.append();
+       
+    }
+}
+</script>

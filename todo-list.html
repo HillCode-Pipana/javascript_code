@@ -1,0 +1,52 @@
+<style>
+    #error{color:red;}
+
+    .listData{display: flex;justify-content: center; align-items: center;} 
+    #box{width:400px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;padding:10px 30px;}
+    input {    width: 370px;
+        padding: 6px;}
+        button {background: blue;
+    color: #fff;
+    border: 1px solid blue;
+    padding: 6px 15px;
+    font-size: 15px;}
+    ol{
+        padding: 0px;
+       }
+    ol li{
+        padding: 0px;
+        font-size:15px;
+        line-height:30px;
+    }
+</style>
+
+<div class="listData">
+<div class="list">
+<input type="text" id="data">
+<button onclick="addList()">Add List</button><br>
+<span id="error"></span>
+<ol id="box"></ol>
+</div>
+</div>
+
+
+
+<script>
+    function addList(){ 
+    let data = document.getElementById('data').value;
+    console.log(data);
+
+    if(data=="")
+    {
+        document.getElementById('error').innerHTML = "please fill the field";
+    }else {
+            let box = document.getElementById('box');
+            let li = document.createElement('li');
+
+            li.innerText = data;
+
+            data.innerText = box.prepend(li);
+    }
+
+}
+</script>

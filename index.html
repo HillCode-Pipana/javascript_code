@@ -1,0 +1,19 @@
+<button onclick="Counter(-1)">-</button>
+<span id="data">0</span>
+<button onclick="Counter(+1)">+</button>
+
+<script>
+function Counter(click)
+{
+    var data = document.getElementById('data');
+    var value = parseInt(data.innerText) +click;
+     data.innerText = value;
+    console.log(value);
+
+    if(value < 0)
+{
+    data.innerText = 0;
+}
+   
+}
+</script>

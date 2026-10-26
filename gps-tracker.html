@@ -1,0 +1,47 @@
+<script>
+if ('geolocation' in navigator) {
+    // Geolocation API is supported
+} else {
+    console.log('Geolocation API not supported by this browser.');
+}
+
+navigator.geolocation.getCurrentPosition(position => {
+    console.log('Latitude:', position.coords.latitude);
+    console.log('Longitude:', position.coords.longitude);
+}, error => {
+    console.error('Error obtaining location:', error);
+});
+
+const watchId = navigator.geolocation.watchPosition(position => {
+    console.log('Updated Latitude:', position.coords.latitude);
+    console.log('Updated Longitude:', position.coords.longitude);
+}, error => {
+    console.error('Error obtaining location:', error);
+}, {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+});
+
+// To stop watching the position
+// navigator.geolocation.clearWatch(watchId);
+
+
+function errorHandler(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            console.error("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            console.error("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            console.error("The request to get user location timed out.");
+            break;
+        default:
+            console.error("An unknown error occurred.");
+            break;
+    }
+}
+
+</script>

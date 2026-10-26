@@ -1,0 +1,24 @@
+<h1 style="text-align: center;">Counter</h1>
+
+<div style="display: flex;justify-content: center;align-items: center;">
+<button onclick="Counter(-1)" style="width:50px;height:50px; font-size:30px;">-</button>
+<span id="data" style="padding:0px 20px; font-size:30px;">0</span>
+<button onclick="Counter(+1)" style="width:50px;height:50px; font-size:30px;">+</button>
+</div>
+
+<script>
+
+function Counter(click)
+{
+    var data = document.getElementById('data');
+    var value = parseInt(data.innerText) +click;     /* parseInt() converts first argument in string and returns data to integer */
+    data.innerText = value;
+    // console.log(value);
+
+    if(value < 0)
+{
+    data.innerText = 0;
+}
+}
+
+</script>
